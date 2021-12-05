@@ -17,5 +17,5 @@ for term in terms:
         if digit_sum % 7 == 0:
             full_sum += cube_odd_list[i] + term
 
-    print('term:', term, 'sum:' , full_sum)
+    print('term:', term, 'sum:', full_sum)
 

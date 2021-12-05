@@ -6,27 +6,18 @@ while duration != 0:
     if duration != 0:
         durations.append(duration)
 
+periods = (86400, 3600, 60)
+terms = (' дней ', ' часов ', ' минут')
+
 for duration in durations:
-    if duration < 60:
-        print(duration, ':', duration, 'сек')
-    elif duration < 3600:
-        sec = duration
-        min = sec // 60
-        sec -= min * 60
-        print(duration, ':', min, 'мин', sec, 'сек')
-    elif duration < 86400:
-        sec = duration
-        hour = sec // 3600
-        sec -= hour * 3600
-        min = sec // 60
-        sec -= min * 60
-        print(duration, ':', hour, 'час', min, 'мин', sec, 'сек')
-    else:
-        sec = duration
-        day = sec // 86400
-        sec -= day * 86400
-        hour = sec // 3600
-        sec -= hour * 3600
-        min = sec // 60
-        sec -= min * 60
-        print(duration, ':', day, 'дней', hour, 'час', min, 'мин', sec, 'сек')
+    text_duration = ''
+
+    for period_i in range(len(periods)):
+        result = duration // periods[period_i]
+        text_duration += str(result) + terms[period_i]
+
+        if result != 0:
+            duration %= periods[period_i]
+
+    print(text_duration, duration, 'сек')
+
