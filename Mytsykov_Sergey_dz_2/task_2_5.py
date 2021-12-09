@@ -8,7 +8,7 @@ def PrintPrices(prices):
     return str_prices
 
 
-asc_prices = [115.2, 12.23, 57.8, 46.51, 97, 12, 789.1, 42.42, 112.12, 104.03]
+asc_prices = [115.2, 12.23, 57.8, 46.51, 97, 12, 789.1, 42.42, 112.12, 104.03, 4.04]
 asc_prices.sort()
 print(PrintPrices(asc_prices))
 desc_prices = list(reversed(asc_prices))
